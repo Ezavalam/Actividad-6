@@ -1,0 +1,131 @@
+public class Ejercios {
+	int top=0;
+	int MAX;
+	char cero = 0;
+	char stack[];
+	
+	public char pop() {
+		if(top==cero) 
+		{
+			System.out.println("Stack is empty");
+			return (0);
+		}
+			else {
+				top--; /* decreases top */
+				return(stack[top-1]); /* returns eliminated element */ 	
+			}
+		}
+	
+
+	public char delete() 
+	{
+		
+	}
+	
+	public class Queue {
+	    private int front, rear, size;
+	    private int capacity;
+	    private int[] array;
+
+	    Queue(int capacity) {
+	        this.capacity = capacity;
+	        front = this.size = 0;
+	        rear = capacity - 1;
+	        array = new int[this.capacity];
+	    }
+
+	    // Función para comprobar si la cola está vacía
+	    boolean isEmpty() {
+	        return (size == 0);
+	    }
+
+	    // Función para comprobar si la cola está llena
+	    boolean isFull() {
+	        return (size == capacity);
+	    }
+
+	    // Función para agregar un elemento a la cola
+	    void enqueue(int item) {
+	        if (isFull())
+	            return;
+	        rear = (rear + 1) % capacity;
+	        array[rear] = item;
+	        size = size + 1;
+	        System.out.println(item + " agregado a la cola");
+	    }
+
+	    // Función para quitar un elemento de la cola
+	    int dequeue() {
+	        if (isEmpty())
+	            return Integer.MIN_VALUE;
+
+	        int item = array[front];
+	        front = (front + 1) % capacity;
+	        size = size - 1;
+	        return item;
+	    }
+
+	    // Función para obtener el elemento en el frente de la cola
+	    int front() {
+	        if (isEmpty())
+	            return Integer.MIN_VALUE;
+
+	        return array[front];
+	    }
+
+	    // Función para obtener el elemento en el final de la cola
+	    int rear() {
+	        if (isEmpty())
+	            return Integer.MIN_VALUE;
+
+	        return array[rear];
+	    }
+	}
+	
+	public class Stack {
+	    static final int MAX = 1000;
+	    int top;
+	    int a[] = new int[MAX]; // arreglo que almacena los elementos de la pila
+
+	    boolean isEmpty() {
+	        return (top < 0);
+	    }
+
+	    Stack() {
+	        top = -1;
+	    }
+
+	    boolean push(int x) {
+	        if (top >= (MAX - 1)) {
+	            System.out.println("Error: stack overflow");
+	            return false;
+	        } else {
+	            a[++top] = x;
+	            System.out.println(x + " introducido en la pila");
+	            return true;
+	        }
+	    }
+
+	    int pop() {
+	        if (top < 0) {
+	            System.out.println("Error: stack underflow");
+	            return 0;
+	        } else {
+	            int x = a[top--];
+	            return x;
+	        }
+	    }
+	}
+	
+	public class Vuelta {
+	        for (int i = 0; i < str.length(); i++) {
+	            stack.push(str.charAt(i));
+	        }
+	        StringBuilder reversed = new StringBuilder();
+	        while (!stack.isEmpty()) {
+	            reversed.append(stack.pop());
+	        }
+	        System.out.println("La cadena invertida es: " + reversed);
+	    }
+	}
+}
